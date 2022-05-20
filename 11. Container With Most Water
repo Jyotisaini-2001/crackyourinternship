@@ -1,0 +1,42 @@
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int n= height.size();
+//  O(N*N)
+//         int count=0; 
+//         int cnt=0;
+//         for(int i=0; i<n; i++){
+//             for(int j=0; j<n; j++){
+//                 int p=abs(i-j);
+               
+//                 if(height[i]< height[j]){
+//                     cnt+=height[i]*p;
+                    
+//                 }
+//                 else{
+//                     cnt+=height[j]*p;
+//                 }
+//                 if(cnt>count){
+//                 count=cnt;
+//             }
+//                 cnt=0;
+                
+//             }
+            
+//         }
+//         return count;
+        
+        int count=0;
+        int p=0, q=n-1;
+        while(p<q){
+            count= max(count, min(height[p], height[q])*(q-p));
+            if(height[p]< height[q]){
+                p++;
+            }
+            else{
+                q--;
+            }
+        }
+        return count;
+    }
+};
