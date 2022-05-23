@@ -1,0 +1,23 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void CountAndPrintDups(string s){
+    map<char,int>mp;
+   
+    for(auto x: s){
+        mp[x]++;
+    }
+    for(auto p: mp){
+        if(p.second>1){
+            cout<<p.first<<", Count of dups="<<p.second<<"\n";
+        }
+    }
+}
+int main()
+{
+    string s;
+    cin>>s;
+    CountAndPrintDups(s);
+
+    return 0;
+}
