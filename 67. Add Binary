@@ -16,7 +16,7 @@ public:
             if(i<b.length() && b[i]=='1'){
                 y=1;
             }
-            result=to_string((x+y+carry)%2) + s;
+            s=to_string((x+y+carry)%2) + s;
             carry=(x+y+carry)/2;
             i+=1;
         }
