@@ -2,7 +2,7 @@ class Solution {
 public:
     string addBinary(string a, string b) {
         int carry=0;
-        string result="";
+        string s="";
     reverse(a.begin(),a.end()); 
     reverse(b.begin(),b.end());
     int i=0,sum;
@@ -16,11 +16,11 @@ public:
             if(i<b.length() && b[i]=='1'){
                 y=1;
             }
-            result=to_string((x+y+carry)%2) + result;
+            result=to_string((x+y+carry)%2) + s;
             carry=(x+y+carry)/2;
             i+=1;
         }
-        return result;
+        return s;
         
     }
 };
